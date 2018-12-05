@@ -8,17 +8,17 @@ LABEL maintainer="Auska"
 
 ENV TZ=Asia/Shanghai PORT=999 VER=3.5.9
 
-RUN \
-	echo "**** install packages ****" \
-	&& apk add --no-cache curl unzip \
-	&& cd /tmp \
-	&& curl -fSL http://qiniu.zoranjojo.top/BaiduPCS-Go-${VER}-linux-amd64.zip -o baidupcs.zip \
-	&& mkdir -p /defaults \
-	&& unzip baidupcs.zip -d /defaults \
-	&& mv /defaults/BaiduPCS-Go-${VER}-linux-amd64/BaiduPCS-Go /defaults/BaiduPCS-Go \
-	&& rm -rf /defaults/BaiduPCS-Go-${VER}-linux-amd64 \
-	&& apk del curl \
-	&& rm -rf /tmp
+# RUN \
+# 	echo "**** install packages ****" \
+# 	&& apk add --no-cache curl unzip \
+# 	&& cd /tmp \
+# 	&& curl -fSL http://qiniu.zoranjojo.top/BaiduPCS-Go-${VER}-linux-amd64.zip -o baidupcs.zip \
+# 	&& mkdir -p /defaults \
+# 	&& unzip baidupcs.zip -d /defaults \
+# 	&& mv /defaults/BaiduPCS-Go-${VER}-linux-amd64/BaiduPCS-Go /defaults/BaiduPCS-Go \
+# 	&& rm -rf /defaults/BaiduPCS-Go-${VER}-linux-amd64 \
+# 	&& apk del curl \
+# 	&& rm -rf /tmp
 
 # copy local files
 COPY root/ /
